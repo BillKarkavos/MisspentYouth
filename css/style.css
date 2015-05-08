@@ -6,32 +6,42 @@ html,body {
   overflow:hidden
 }
 
-.background-video {
+.video, .video2 {
   min-width:100%;
   min-height:100%
 }
 
-.wrapper {
+.wrapper, .wrapper2 {
   position:fixed;
   top:0;
   right:0;
   bottom:0;
   left:0;
-  background-image:url(../img/bg-80.png);
   background-size:cover;
   background-position:center;
   text-align:center;
   text-rendering:optimizeLegibility
 }
 
-.wrapper:before {
+.wrapper {
+	  background-image:url(../img/bg-1-80.png);
+}
+
+
+.wrapper2 {
+	  background-image:url(../img/bg-2-80.png);
+}
+
+
+
+.wrapper:before, .wrapper2:before  {
   content:'';
   display:inline-block;
   height:100%;
   vertical-align:middle
 }
 
-.wrapper:after {
+.wrapper:after, .wrapper2:after {
   content:'';
   position:fixed;
   top:10px;
@@ -41,7 +51,7 @@ html,body {
   border:1px solid rgba(255,255,255,.8)
 }
 
-.wrapper-inner {
+.wrapper-inner, .wrapper2-inner {
   position:relative;
   display:inline-block;
   vertical-align:middle;
@@ -49,7 +59,7 @@ html,body {
   max-width:80%
 }
 
-.wrapper-inner::before {
+.wrapper-inner::before, .wrapper2-inner::before  {
   background-color:#fff;
   background-size:100% auto;
   border-radius:50%;
@@ -67,11 +77,11 @@ html,body {
 }
 
 @media only screen and (max-width : 640px) {
-.wrapper-inner {
+.wrapper-inner, .wrapper2-inner  {
   margin-top:-20%
 }
 
-.wrapper-inner::before {
+.wrapper-inner::before, .wrapper2-inner::before  {
   height:250px;
   margin-left:-45%;
   margin-top:-30%;
@@ -102,7 +112,7 @@ p {
 }
 }
 
-.symbols span {
+.symbols span, .symbols2 span {
   display:inline-block;
   transform:scale(1);
   -webkit-transform:scale(1);
@@ -110,7 +120,7 @@ p {
   -webkit-transition:transform 2s cubic-bezier(0,1,0,1)
 }
 
-.symbols span:hover {
+.symbols span:hover, .symbols2 span:hover {
   cursor:crosshair;
   transform:scale(1.3);
   -webkit-transform:scale(1.3);
@@ -118,35 +128,35 @@ p {
   -webkit-transition:transform .2s cubic-bezier(0,0.75,0,1)
 }
 
-.symbols span:active {
+.symbols span:active, .symbols2 span:active {
   text-shadow:none
 }
 
-.symbols span:nth-child(1),.symbols span:nth-child(7) {
+.symbols span:nth-child(1),.symbols span:nth-child(7), .symbols2 span:nth-child(1),.symbols2 span:nth-child(7) {
   font-size:.3em;
   animation-delay:.2s
 }
 
-.symbols span:nth-child(2),.symbols span:nth-child(6) {
+.symbols span:nth-child(2),.symbols span:nth-child(6), .symbols2 span:nth-child(2),.symbols2 span:nth-child(6) {
   font-size:.5em;
   animation-delay:.1s
 }
 
-.symbols span:nth-child(3),.symbols span:nth-child(5) {
+.symbols span:nth-child(3),.symbols span:nth-child(5), .symbols2 span:nth-child(3),.symbols2 span:nth-child(5) {
   font-size:.7em;
   animation-delay:.1s
 }
 
-.symbols span:nth-child(4) {
+.symbols span:nth-child(4), .symbols2 span:nth-child(4) {
   font-size:1em;
   animation-delay:0
 }
 
-.symbols span {
+.symbols span, .symbols2 span {
   animation:symbols-animation 3s 50 ease-in-out
 }
 
-@-webkit-keyframes symbols-animation {
+@-webkit-keyframes symbols-animation, @-webkit-keyframes symbols2-animation{
 0% {
   transform:scale(1)
 }
@@ -164,27 +174,27 @@ p {
 }
 }
 
-.symbols:hover span {
+.symbols:hover span, .symbols2:hover span {
   animation:/* Disables the animation on hover */
 none
 }
 
-.title {
+.title, .title2 {
   font-family:"Permanent Marker",Verdana,sans-serif
 }
 
-.title:focus {
+.title:focus, .title2:focus {
   outline:none
 }
 
-.title span {
+.title span, .title2 span {
   vertical-align:middle;
   line-height:1.5em;
   transition:font-size 2s cubic-bezier(0,1,0,1);
   -webkit-transition:font-size 2s cubic-bezier(0,1,0,1)
 }
 
-.title span:hover {
+.title span:hover, .title2 span:hover {
   cursor:crosshair;
   font-size:1.5em;
   line-height:1em;
@@ -192,21 +202,44 @@ none
   -webkit-transition:font-size .2s cubic-bezier(0,0.75,0,1)
 }
 
-.title span:active {
+.title span:active, .title2 span:active {
   font-size:1em;
   text-shadow:none
 }
 
-.title span::selection {
+.title span::selection, .title2 span::selection {
   background-color:red
 }
 
-.tagline {
+.tagline, .tagline2 {
   font-family:"Lato",Verdana,sans-serif;
   font-size:.7em;
   text-transform:uppercase
 }
 
-.tagline span:active {
+.tagline span:active, .tagline2 span:active {
   text-shadow:none
+}
+
+.buttons {
+  position:fixed;
+  top:20px;
+  right:20px
+}
+
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #000;
+  font-size: 10px;
+  background: #fff;
+  padding: 5px 7px 5px 7px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #fafafa;
+  text-decoration: none;
 }
